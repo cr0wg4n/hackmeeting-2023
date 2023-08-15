@@ -1,0 +1,92 @@
+<div id="starfield" class="absolute inset-0">
+  <canvas id="game-of-life" width="2000" height="900"></canvas>
+</div>
+
+<script>
+  // Based on http://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
+  // https://gist.github.com/strategicpause/827183/2da101e92a79c0ffa40b0b986175170984f00355
+  const GAME_WIDTH = 2000
+  const GAME_HEIGHT = 900
+
+  let WIDTH = GAME_WIDTH/5;
+  let HEIGHT = GAME_HEIGHT/5;
+  let state = new Array(WIDTH);
+
+  init()
+
+  function init() {
+    for(let i = 0; i < WIDTH; i++) {
+      state[i] = new Array(HEIGHT);
+      for(let j = 0; j < HEIGHT; j++) {
+        state[i][j] = Math.random() < 0.08; 
+      }
+    }
+    setInterval(game_loop, 250);
+  }
+  
+  function game_loop() {
+    let n_neighbors;
+    for(let i = 0; i < WIDTH; i++) {
+      for(let j = 0; j < HEIGHT; j++) {
+        n_neighbors = num_neighbors(i,j);
+        state[i][j] = (state[i][j]) ?
+          n_neighbors == 2 || n_neighbors == 3 :
+          n_neighbors == 3;
+      }
+    }
+    draw();
+  }
+  
+  function num_neighbors(x: number, y: number) {
+    let total = 0;
+    // Check top
+    if(y > 0) {
+      total += state[x][y - 1] ? 1 : 0;
+    }
+    // Check bottom
+    if(y < HEIGHT - 1) {
+      total += state[x][y + 1] ? 1 : 0;
+    }
+    // Check left
+    if(x > 0) {
+      total += state[x - 1][y] ? 1 : 0;
+    }
+    // Check right
+    if(x < WIDTH - 1) {
+      total += state[x + 1][y] ? 1 : 0;
+    }
+    // Check top-left
+    if(y > 0 && x > 0) {
+      total += state[x - 1][y -1] ? 1 : 0;
+    }
+    // Check top-right
+    if(y > 0 && x < WIDTH - 1) {
+      total += state[x + 1][y - 1] ? 1 : 0;
+    }
+    // Check bottom-left
+    if(y < HEIGHT - 1 && x > 0) {
+      total += state[x - 1][y + 1] ? 1 : 0;
+    }
+    // Check bottom-right
+    if(y < HEIGHT - 1 && x < WIDTH - 1) {
+      total += state[x + 1][y + 1] ? 1 : 0;
+    }
+    return total;
+  }
+  
+  function draw() {
+    let canvas = document.getElementById('game-of-life') as HTMLCanvasElement;
+    if(canvas.getContext) {
+      let ctx = canvas.getContext('2d');
+      ctx?.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
+      for(let i = 0; i < GAME_WIDTH; i+=5) {
+        for(let j = 0; j < GAME_HEIGHT; j+= 5) {
+          if(ctx && state[i / 5][j / 5]) {
+            ctx.fillStyle =  Math.random() < 0.2 ?'rgba(255,255,255,0.3)':'rgba(255,255,255,0.5)'
+            ctx?.fillRect(i, j, 5, 5);
+          }
+        }
+      }
+    }
+  }
+</script>
