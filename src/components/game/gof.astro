@@ -1,27 +1,37 @@
 <div id="starfield" class="absolute inset-0">
-  <canvas id="game-of-life" width="2000" height="900"></canvas>
+  <canvas id="game-of-life" width="0" height="0"></canvas>
 </div>
 
 <script>
   // Based on http://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
   // https://gist.github.com/strategicpause/827183/2da101e92a79c0ffa40b0b986175170984f00355
-  const GAME_WIDTH = 2000
-  const GAME_HEIGHT = 900
+  const { width, height } = getScreenSizes()
+  const GAME_WIDTH = width
+  const GAME_HEIGHT = height
+  const SQUARE_SIZE = 5
 
-  let WIDTH = GAME_WIDTH/5;
-  let HEIGHT = GAME_HEIGHT/5;
+  let WIDTH = Math.round(GAME_WIDTH / SQUARE_SIZE);
+  let HEIGHT = Math.round(GAME_HEIGHT / SQUARE_SIZE);
   let state = new Array(WIDTH);
 
   init()
 
   function init() {
+    const canvas: any = document.getElementById('game-of-life')
+    canvas.width = GAME_WIDTH;
+    canvas.height = GAME_HEIGHT;
+
     for(let i = 0; i < WIDTH; i++) {
       state[i] = new Array(HEIGHT);
       for(let j = 0; j < HEIGHT; j++) {
         state[i][j] = Math.random() < 0.08; 
       }
     }
-    setInterval(game_loop, 250);
+    let interval = setInterval(game_loop, 300);
+    setTimeout(() => {
+      clearInterval(interval)
+      init()
+    }, 50000);
   }
   
   function game_loop() {
@@ -79,14 +89,23 @@
     if(canvas.getContext) {
       let ctx = canvas.getContext('2d');
       ctx?.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
-      for(let i = 0; i < GAME_WIDTH; i+=5) {
-        for(let j = 0; j < GAME_HEIGHT; j+= 5) {
-          if(ctx && state[i / 5][j / 5]) {
-            ctx.fillStyle =  Math.random() < 0.2 ?'rgba(255,255,255,0.3)':'rgba(255,255,255,0.5)'
-            ctx?.fillRect(i, j, 5, 5);
+      for(let i = 0; i < GAME_WIDTH; i+=SQUARE_SIZE) {
+        for(let j = 0; j < GAME_HEIGHT; j+= SQUARE_SIZE) {
+          if(ctx && state[i / SQUARE_SIZE][j / SQUARE_SIZE]) {
+            ctx.fillStyle =  Math.random() < 0.1 ?'rgba(255,255,255,0.2)':'rgba(255,255,255,0.3)'
+            ctx?.fillRect(i, j, SQUARE_SIZE, SQUARE_SIZE);
           }
         }
       }
+    }
+  }
+  function getScreenSizes() {
+    const width = Math.round((window.innerWidth > 0) ? window.innerWidth : screen.width)
+    const height = Math.round((window.innerHeight > 0) ? window.innerHeight : screen.height)
+
+    return {
+      width,
+      height
     }
   }
 </script>

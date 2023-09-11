@@ -5,23 +5,23 @@ import type { FooterLink } from "~/types";
 
 const links: Array<FooterLink> = [
   {
-    url: "https://astro.build/",
-    description: "Astro's official website",
-    icon: "mdi:home",
+    url: "https://github.com/HM-Bolivia",
+    description: "HM on GitHub",
+    icon: "fa-brands:github",
   },
   {
-    url: "https://github.com/mhyfritz/astro-landing-page",
-    description: "View source on GitHub",
-    icon: "fa-brands:github-alt",
+    url: "https://www.facebook.com/hackmeetingbolivia",
+    description: "HM on Facebook",
+    icon: "fa-brands:facebook",
   },
   {
-    url: "https://astro.build/chat",
-    description: "Astro on Discord",
-    icon: "fa-brands:discord",
+    url: "https://www.instagram.com/hackmeetingbolivia/",
+    description: "HM on Instagram",
+    icon: "fa-brands:instagram",
   },
   {
-    url: "https://twitter.com/astrodotbuild",
-    description: "Astro on Twitter",
+    url: "https://twitter.com/HackmeetingB0",
+    description: "HM on Twitter",
     icon: "fa-brands:twitter",
   },
 ];
@@ -31,7 +31,7 @@ const links: Array<FooterLink> = [
   <div class="absolute inset-0 overflow-hidden opacity-40">
     <HeroImage />
   </div>
-  <ul class="relative grid grid-cols-2 gap-4 sm:grid-cols-4">
+  <ul class="relative grid grid-cols-2 gap-4 sm:grid-cols-5">
     {
       links.map((link) => (
         <li>
