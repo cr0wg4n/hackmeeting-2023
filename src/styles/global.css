@@ -7,6 +7,12 @@ a,
 }
 
 .gradient-text {
-  @apply bg-clip-text text-transparent;
-  @apply bg-gradient-to-br from-indigo-500 via-fuchsia-500 to-pink-500;
+  background: linear-gradient(90deg, rgb(240, 226, 134) 0%, rgb(238, 92, 187) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
+
+.font-strong {
+  letter-spacing: 1px;
+} 
