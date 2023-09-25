@@ -1,4 +1,5 @@
 ---
+import Icon from "astro-icon";
 import { getCollection } from "astro:content";
 import ContentSection from "~/components/content-section.astro";
 import ShowcaseCard from "~/components/showcase-card.astro";
@@ -14,18 +15,28 @@ const orderedSites = featuredSites.sort(
 
 <ContentSection title="Hackmeetings Previos" id="showcase">
   <Fragment slot="lead">
-    Astro is <span class="text-primary">versatile</span>.{" "}
-    <span class="text-primary">Explore</span> what's possible and get{" "}
-    <span class="text-primary">inspired</span>.
+    Revisa <span class="text-primary">nuestras memorias</span>. Más que solo un evento, 
+    un corazón que late desde el 2010 en Bolivia
   </Fragment>
-  <div class="max-w-6xl space-y-2">
+
+  <a
+    href="https://memorias.hackmeeting.org.bo/?source=website"
+    target="_blank"
+    rel="noopener"
+    class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4 rounded-3xl"
+  >
+    <Icon pack="mdi" name="web" class="h-10" />
+    <span>Nuestas memorias</span>
+  </a>
+
+  <!-- <div class="max-w-6xl space-y-2">
     <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
       {orderedSites.map((site) => <ShowcaseCard site={site} />)}
     </div>
     <p class="text-right text-sm">
-      <a class="text-primary" href="https://astro.build/showcase/">
+      <a class="text-primary" href="https://memorias.hackmeeting.org.bo/">
         ...and more &rarr;
       </a>
     </p>
-  </div>
+  </div> -->
 </ContentSection>

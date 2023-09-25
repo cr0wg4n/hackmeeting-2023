@@ -1,4 +1,5 @@
 ---
+import Icon from "astro-icon";
 import CompatibilityList from "~/components/compatibility-list.astro";
 import ContentSection from "~/components/content-section.astro";
 import type { CompatibilityItem } from "~/types";
@@ -38,52 +39,54 @@ const frameworks: Array<CompatibilityItem> = [
 
 const platforms: Array<CompatibilityItem> = [
   {
-    title: "Netlify",
+    title: "White Hat",
     icon: "platforms/netlify",
     url: "https://www.netlify.com/",
   },
   {
-    title: "Vercel",
+    title: "Gray Hat",
     icon: "platforms/vercel",
     url: "https://vercel.com/",
   },
   {
-    title: "Cloudflare",
+    title: "Black Hat",
     icon: "fa-brands:cloudflare",
     url: "https://pages.cloudflare.com/",
-  },
-  {
-    title: "Render",
-    icon: "platforms/render",
-    url: "https://render.com/",
-  },
-  {
-    title: "GitHub",
-    icon: "fa-brands:github",
-    url: "https://pages.github.com/",
-  },
-  {
-    title: "GitLab",
-    icon: "fa-brands:gitlab",
-    url: "https://docs.gitlab.com/ee/user/project/pages/",
   },
 ];
 ---
 
 <ContentSection title="¿Deseas Auspiciar el Evento?" id="compatibility">
   <Fragment slot="lead">
-    Astro <span class="text-primary">plays nice</span>. Bring your own UI{" "}
+    Si eres una empresa comprometida con la tecnología, innovación y
+     la seguridad informática
+     <br>
+     <br>
+     <span class="text-primary">
+      ¡Esta es tu oportunidad! 
+    </span>
+    <!-- Astro <span class="text-primary">plays nice</span>. Bring your own UI{" "}
     <span class="text-primary">framework</span>
-    and deploy to your favorite <span class="text-primary">platform</span>.
+    and deploy to your favorite <span class="text-primary">platform</span>. -->
   </Fragment>
-  <CompatibilityList
+  <!-- <CompatibilityList
     items={frameworks}
     title="Frameworks"
     url="https://docs.astro.build/core-concepts/framework-components/"
-  />
+  /> -->
   <CompatibilityList
     items={platforms}
-    title="Platforms"
+    title="Nuestros Paquetes"
     url="https://docs.astro.build/guides/deploy/"
   />
+
+  <a
+    href="https://l.linklyhq.com/l/1toer?source=website"
+    target="_blank"
+    rel="noopener"
+    class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4 rounded-3xl"
+  >
+    <Icon pack="dashicons" name="pdf" class="h-10" />
+    <span>Revisa nuestras Ofertas</span>
+  </a>
 </ContentSection>

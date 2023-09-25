@@ -8,7 +8,7 @@
   const { width, height } = getScreenSizes()
   const GAME_WIDTH = width
   const GAME_HEIGHT = height
-  const SQUARE_SIZE = 5
+  const SQUARE_SIZE = 8
 
   let WIDTH = Math.round(GAME_WIDTH / SQUARE_SIZE);
   let HEIGHT = Math.round(GAME_HEIGHT / SQUARE_SIZE);
@@ -28,6 +28,7 @@
       }
     }
     let interval = setInterval(game_loop, 300);
+
     setTimeout(() => {
       clearInterval(interval)
       init()
@@ -89,16 +90,18 @@
     if(canvas.getContext) {
       let ctx = canvas.getContext('2d');
       ctx?.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
-      for(let i = 0; i < GAME_WIDTH; i+=SQUARE_SIZE) {
+      for(let i = 0; i < GAME_WIDTH; i+= SQUARE_SIZE) {
         for(let j = 0; j < GAME_HEIGHT; j+= SQUARE_SIZE) {
           if(ctx && state[i / SQUARE_SIZE][j / SQUARE_SIZE]) {
-            ctx.fillStyle =  Math.random() < 0.1 ?'rgba(255,255,255,0.2)':'rgba(255,255,255,0.3)'
+            // ctx.fillStyle =  Math.random() < 0.1 ? 'rgba(255,255,255,0.2)':'rgba(255,255,255,0.3)'
+            ctx.fillStyle =  'rgba(225,218,172, 0.35)'
             ctx?.fillRect(i, j, SQUARE_SIZE, SQUARE_SIZE);
           }
         }
       }
     }
   }
+
   function getScreenSizes() {
     const width = Math.round((window.innerWidth > 0) ? window.innerWidth : screen.width)
     const height = Math.round((window.innerHeight > 0) ? window.innerHeight : screen.height)
