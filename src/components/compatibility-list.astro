@@ -11,7 +11,7 @@ const { items, title } = Astro.props;
 ---
 
 <div class="w-full max-w-6xl space-y-2">
-  <div class="relative border border-default bg-offset px-6 pb-4 pt-8">
+  <div class="relative border border-default bg-offset p-2 md:px-4 md:pb-4 md:pt-4">
     <h3
       class="absolute right-4 top-0 -translate-y-1/2 rounded-full border border-current bg-default px-4 py-1 uppercase tracking-tight text-xs"
     >
@@ -22,14 +22,14 @@ const { items, title } = Astro.props;
         items.map((item) => (
           <li>
             <a 
-              class="flex flex-col items-center gap-1 drop-shadow-[0_0px_25px_rgba(255,255,255,0.3)] hover:scale-125 hover:drop-shadow-[0_0px_30px_rgba(255,255,255,0.5)]" 
+              class="flex flex-col items-center gap-1 drop-shadow-[0_0px_25px_rgba(255,255,255,0.4)] hover:scale-125 hover:drop-shadow-[0_0px_30px_rgba(255,255,255,0.5)]" 
               href={item.url}
               target="_blank"
               rel="noopener"
             >
-              <Icon class="h-32 -rotate-12" name={item.icon} color={item.color}/>
-              <span class="font-strong text-2xl" style={`color: ${item.color};`}>{item.title}</span>
-              <span class="text-primary font-strong text-1xl">{item.pricing}</span>
+              <Icon class="h-20 md:h-32 -rotate-12" name={item.icon} color={item.color}/>
+              <span class="text-center font-strong text-xl md:text-2xl" style={`color: ${item.color};`}>{item.title}</span>
+              <span class="text-primary font-strong text-md md:text-1xl">{item.pricing}</span>
             </a>
           </li>
         ))
