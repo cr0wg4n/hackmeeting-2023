@@ -6,7 +6,8 @@ import vue from "@astrojs/vue";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://hackmeeting.org.bo",
+  site: 'https://hackmeeting-2023.vercel.app/',
+  // site: "https://hackmeeting.org.bo",
   integrations: [tailwind(), image({
     serviceEntryPoint: "@astrojs/image/sharp"
   }), vue()],
