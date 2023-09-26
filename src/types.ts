@@ -2,6 +2,8 @@ export interface CompatibilityItem {
   icon: string;
   title: string;
   url: string;
+  color?: string;
+  pricing?: string;
 }
 
 export interface FeatureItem {

@@ -6,30 +6,30 @@ import type { FooterLink } from "~/types";
 const links: Array<FooterLink> = [
   {
     url: "https://github.com/HM-Bolivia",
-    description: "HM on GitHub",
+    description: "Hackmeeting en GitHub",
     icon: "fa-brands:github",
   },
   {
     url: "https://www.facebook.com/hackmeetingbolivia",
-    description: "HM on Facebook",
+    description: "Hackmeeting en Facebook",
     icon: "fa-brands:facebook",
   },
   {
     url: "https://www.instagram.com/hackmeetingbolivia/",
-    description: "HM on Instagram",
+    description: "Hackmeeting en Instagram",
     icon: "fa-brands:instagram",
   },
   {
     url: "https://twitter.com/HackmeetingB0",
-    description: "HM on Twitter",
+    description: "Hackmeeting en Twitter",
     icon: "fa-brands:twitter",
   },
 ];
 ---
 
 <footer class="relative flex h-64 items-center justify-center">
-  <div class="absolute inset-0 overflow-hidden opacity-40">
-    <HeroImage />
+  <div class="absolute inset-0 overflow-hidden opacity-50 bg-black">
+    <!-- <HeroImage /> -->
   </div>
   <ul class="relative grid grid-cols-2 gap-4 sm:grid-cols-5">
     {
@@ -38,6 +38,7 @@ const links: Array<FooterLink> = [
           <a
             class="flex h-16 w-16 items-center justify-center rounded-full border-2 border-current p-4"
             href={link.url}
+            title={link.description}
           >
             <span class="sr-only">{link.description}</span>
             <Icon class="h-full" name={link.icon} />

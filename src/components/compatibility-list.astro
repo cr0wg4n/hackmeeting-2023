@@ -5,10 +5,9 @@ import type { CompatibilityItem } from "~/types";
 export interface Props {
   items: Array<CompatibilityItem>;
   title: string;
-  url: string;
 }
 
-const { items, title, url } = Astro.props;
+const { items, title } = Astro.props;
 ---
 
 <div class="w-full max-w-6xl space-y-2">
@@ -18,13 +17,14 @@ const { items, title, url } = Astro.props;
     >
       {title}
     </h3>
-    <ul class="grid grid-cols-3 gap-8 sm:grid-cols-3">
+    <ul class="grid grid-cols-3 gap-8 sm:grid-cols-3 mb-4">
       {
         items.map((item) => (
           <li>
-            <a class="flex flex-col items-center gap-2" href={item.url}>
-              <Icon class="h-12" name={item.icon} />
-              <span>{item.title}</span>
+            <a class="flex flex-col items-center gap-1 drop-shadow-[0_0px_25px_rgba(255,255,255,0.3)] hover:scale-125 hover:drop-shadow-[0_0px_30px_rgba(255,255,255,0.5)]" href={item.url}>
+              <Icon class="h-32 -rotate-12" name={item.icon} color={item.color}/>
+              <span class="font-strong text-2xl" style={`color: ${item.color};`}>{item.title}</span>
+              <span class="text-primary font-strong text-1xl">{item.pricing}</span>
             </a>
           </li>
         ))

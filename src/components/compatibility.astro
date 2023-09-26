@@ -40,25 +40,31 @@ const frameworks: Array<CompatibilityItem> = [
 const platforms: Array<CompatibilityItem> = [
   {
     title: "White Hat",
-    icon: "platforms/netlify",
-    url: "https://www.netlify.com/",
+    icon: "mdi:redhat",
+    url: "https://l.linklyhq.com/l/1toer?source=white-redhat",
+    color: '#eee',
+    pricing: '100 $',
   },
   {
     title: "Gray Hat",
-    icon: "platforms/vercel",
-    url: "https://vercel.com/",
+    icon: "mdi:redhat",
+    url: "https://l.linklyhq.com/l/1toer?source=gray-redhat",
+    color: '#828282',
+    pricing: '220 $',
   },
   {
     title: "Black Hat",
-    icon: "fa-brands:cloudflare",
-    url: "https://pages.cloudflare.com/",
+    icon: "mdi:redhat",
+    url: "https://l.linklyhq.com/l/1toer?source=black-redhat",
+    color: '#000',
+    pricing: '400 $',
   },
 ];
 ---
 
 <ContentSection title="¿Deseas Auspiciar el Evento?" id="compatibility">
   <Fragment slot="lead">
-    Si eres una empresa comprometida con la tecnología, innovación y
+    Si eres una empresa comprometida con la tecnología, innovación, conocimiento libre y
      la seguridad informática
      <br>
      <br>
@@ -77,7 +83,6 @@ const platforms: Array<CompatibilityItem> = [
   <CompatibilityList
     items={platforms}
     title="Nuestros Paquetes"
-    url="https://docs.astro.build/guides/deploy/"
   />
 
   <a
