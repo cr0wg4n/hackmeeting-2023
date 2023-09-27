@@ -1,0 +1,60 @@
+---
+import { getCollection } from "astro:content";
+import ContentSection from "~/components/content-section.astro";
+import Carousel from "./carousel/carousel.vue";
+import type { Images } from "./carousel/carousel.vue";
+import intersimBlack from "~/assets/sponsor/intersim-black.png";
+
+const featuredSites = await getCollection(
+  "showcase",
+  ({ data }) => "featured" in data
+);
+const orderedSites = featuredSites.sort(
+  (a, b) => a.data.featured! - b.data.featured!
+);
+
+const images: Images[] = [
+  {
+    path: intersimBlack.src,
+    alt: 'Intersim.io',
+    description: 'intersim.io, sponsor gray hat'
+  }
+]
+
+const breakpoints = {
+  640: {
+    itemsToShow: 1,
+  },
+  1024: {
+    itemsToShow: 1,
+  },
+  1280: {
+    itemsToShow: 1,
+  }
+}
+---
+
+<ContentSection title="Nuestros Sponsors" id="showcase">
+  <Fragment slot="lead">
+    Conoce a los
+    <span class="text-primary">
+      brillantes patrocinadores
+    </span>
+    que hacen posible este evento
+  </Fragment>
+
+  <Carousel 
+    client:load
+    images={images}
+    viewportHeigth="200px" 
+    numberOfImagesPerPage={4}
+    autoplay={2000}
+    breakpoints={breakpoints}
+    navigation={false}
+  />
+</ContentSection>
+
+<script>
+  console.log('demo')
+
+</script>

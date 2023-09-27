@@ -1,12 +1,12 @@
 <template>
-  <Carousel :items-to-show="1.5" :autoplay="4000" :wrapAround="true" :transition="300">
-    <Slide v-for="image in images" :key="image.alt">
-      <div :style="{height: '250px', width: '90%'}">
-        <img :src="image.path" :alt="image.alt">
+  <Carousel :breakpoints="breakpoints" :autoplay="autoplay" :wrapAround="true" :transition="300" class="w-full">
+    <Slide v-for="(image, index) in images" :key="`${image.alt}-${index}`">
+      <div class="overflow-hidden" :class="image.class || 'h-40'">
+        <img :src="image.path" :alt="image.alt" class="h-full w-full object-cover">
       </div>
     </Slide>
     <template #addons>
-      <Navigation />
+      <Navigation v-if="navigation" />
       <Pagination />
     </template>
   </Carousel>
@@ -19,12 +19,38 @@ import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 export interface Images {
   path: any
   alt: string
-  description: string
+  description?: string,
+  class?: string,
 }
+
 export interface CarouselProps {
-  images: Images[]
+  images: Images[],
+  viewportHeigth?: string,
+  numberOfImagesPerPage?: number,
+  autoplay?: number,
+  breakpoints?: any,
+  navigation?: boolean
 }
-const props = defineProps<CarouselProps>()
+
+export type sizes = "sm" | "md" | "lg" | "xl" |"2xl"
+
+const props = withDefaults(defineProps<CarouselProps>(),{
+  viewportHeigth: '400px',
+  numberOfImagesPerPage: 1.5,
+  autoplay: 0,
+  breakpoints: {
+    640: {
+      itemsToShow: 1,
+    },
+    1024: {
+      itemsToShow: 3,
+    },
+    1280: {
+      itemsToShow: 5,
+    }
+  },
+  navigation: true
+})
 </script>
 
 <style>
@@ -32,4 +58,13 @@ const props = defineProps<CarouselProps>()
   background: rgba(255,255,255, 0.9) !important;
   border-radius: 9999px !important;
 }
+
+.carousel__pagination-button--active::after {
+  background: rgba(183, 112, 161, 0.9) !important;
+}
+
+/* .carousel__viewport {
+  height: v-bind(viewportHeigth);
+} */
+
 </style>

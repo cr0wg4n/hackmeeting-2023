@@ -4,7 +4,14 @@ import { getCollection } from "astro:content";
 import ContentSection from "~/components/content-section.astro";
 import Carousel from "./carousel/carousel.vue";
 import type { Images } from "./carousel/carousel.vue";
-import moonImage from "~/assets/moon.jpg";
+
+import hm1 from "~/assets/images/hm-1.jpg";
+import hm2 from "~/assets/images/hm-2.jpg";
+import hm3 from "~/assets/images/hm-3.jpg";
+import hm4 from "~/assets/images/hm-4.jpg";
+import hm5 from "~/assets/images/hm-5.jpg";
+import hm6 from "~/assets/images/hm-6.jpg";
+import hm7 from "~/assets/images/hm-7.jpg";
 
 const featuredSites = await getCollection(
   "showcase",
@@ -16,26 +23,53 @@ const orderedSites = featuredSites.sort(
 
 const images: Images[] = [
   {
-    path: moonImage.src,
-    alt: 'moonasdasd',
-    description: 'moon moon'
+    path: hm1.src,
+    alt: 'image old HM',
+    class: 'h-90'
   },
   {
-    path: moonImage.src,
-    alt: 'mooasdn',
-    description: 'moon moon'
+    path: hm2.src,
+    alt: 'image old HM',
+    class: 'h-90'
   },
   {
-    path: moonImage.src,
-    alt: 'moonasd',
-    description: 'moon moon'
+    path: hm3.src,
+    alt: 'image old HM',
+    class: 'h-90'
   },
   {
-    path: moonImage.src,
-    alt: 'moonasd',
-    description: 'moon moonasd'
+    path: hm4.src,
+    alt: 'image old HM',
+    class: 'h-90'
   },
+  {
+    path: hm5.src,
+    alt: 'image old HM',
+    class: 'h-90'
+  },
+  {
+    path: hm6.src,
+    alt: 'image old HM',
+    class: 'h-90'
+  },
+  {
+    path: hm7.src,
+    alt: 'image old HM',
+    class: 'h-90'
+  }
 ]
+
+const breakpoints = {
+  640: {
+    itemsToShow: 1,
+  },
+  1024: {
+    itemsToShow: 3,
+  },
+  1280: {
+    itemsToShow: 3,
+  }
+}
 ---
 
 <ContentSection title="Hackmeetings Previos" id="showcase">
@@ -44,7 +78,14 @@ const images: Images[] = [
     un kernel que late desde el 2010 en Bolivia
   </Fragment>
 
-  <Carousel images={images} client:load/>
+  <Carousel 
+    client:load 
+    images={images} 
+    viewportHeigth="100px" 
+    numberOfImagesPerPage={3} 
+    autoplay={5000}
+    breakpoints={breakpoints}
+  />
 
   <a
     href="https://memorias.hackmeeting.org.bo/?source=website"
@@ -56,8 +97,3 @@ const images: Images[] = [
     <span>Nuestas memorias</span>
   </a>
 </ContentSection>
-
-<script>
-  console.log('demo')
-
-</script>
