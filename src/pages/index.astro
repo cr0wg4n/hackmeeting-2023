@@ -1,11 +1,11 @@
 ---
 import "@fontsource-variable/inter";
-import Compatibility from "~/components/compatibility.astro";
-import Features from "~/components/features.astro";
+import SponsorshipSection from "~/components/sponsorship-section.astro";
+import HackmeetingSection from "~/components/hackmeeting-section.astro";
+import MemoriesSection from "~/components/memories-section.astro";
 import Footer from "~/components/footer.astro";
 import Header from "~/components/header.astro";
 import Intro from "~/components/intro.astro";
-import Showcase from "~/components/showcase.astro";
 import Splash from "~/components/splash.astro";
 import "~/styles/index.css";
 
@@ -66,9 +66,9 @@ const title = 'Hackmeeting 0x7E7'
     <Splash />
     <div class="space-y-24 px-5 py-32">
       <Intro />
-      <Features />
-      <Compatibility />
-      <Showcase />
+      <HackmeetingSection />
+      <SponsorshipSection />
+      <MemoriesSection />
     </div>
     <Footer />
   </body>

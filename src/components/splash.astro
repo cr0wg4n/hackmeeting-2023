@@ -1,15 +1,5 @@
 ---
-import { Picture } from "@astrojs/image/components";
-import { Icon } from "astro-icon";
-import astronautImage from "~/assets/astronaut.png";
-import monitorImage from '~/assets/monitor.png'
-import HeroImage from "~/components/hero-image.astro";
-import Starfield from "~/components/starfield.astro";
 import Gof from "./game/gof.astro";
-import GitHubCorner from "./github-corner.astro";
-
-const widths = [450, 800];
-const sizes = "(min-width: 640px) 42vw, 67vw";
 ---
 
 <section class="relative h-full bg-black">
@@ -27,41 +17,3 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
     </div>
   </div>
 </section>
-
-<noscript>
-  <style>
-    #splash-bg-fallback {
-      display: block;
-    }
-  </style>
-</noscript>
-
-<style>
-  @keyframes float {
-    0% {
-      transform: translate3d(0, 0, 0);
-    }
-
-    100% {
-      transform: translate3d(0, 30px, 0);
-    }
-  }
-
-  #astronaut {
-    animation: float linear 2.5s infinite alternate;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    #astronaut {
-      @apply animate-none;
-    }
-
-    :global(#starfield) {
-      @apply hidden;
-    }
-
-    #splash-bg-fallback {
-      @apply block;
-    }
-  }
-</style>

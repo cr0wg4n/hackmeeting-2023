@@ -56,15 +56,14 @@ const navItems: Array<NavItem> = [
             </button>
           </header>
           <div class="flex justify-center">
-            <!-- <Icon name="logomark" class="h-16" /> -->
-            HACKMEETING 2023
+            <Icon name="hackmeeting-logo" class="h-16" />
           </div>
           <nav>
             <ul class="flex flex-col">
               {
                 navItems.map(({ title, url }) => (
                   <li>
-                    <a class="block py-4 text-center text-xl btn" href={url}>
+                    <a class="block py-4 text-center text-lg btn" href={url}>
                       {title}
                     </a>
                   </li>
