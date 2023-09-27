@@ -2,7 +2,6 @@
 import Icon from "astro-icon";
 import { getCollection } from "astro:content";
 import ContentSection from "~/components/content-section.astro";
-import ShowcaseCard from "~/components/showcase-card.astro";
 
 const featuredSites = await getCollection(
   "showcase",
@@ -28,15 +27,4 @@ const orderedSites = featuredSites.sort(
     <Icon pack="mdi" name="web" class="h-10" />
     <span>Nuestas memorias</span>
   </a>
-
-  <!-- <div class="max-w-6xl space-y-2">
-    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-      {orderedSites.map((site) => <ShowcaseCard site={site} />)}
-    </div>
-    <p class="text-right text-sm">
-      <a class="text-primary" href="https://memorias.hackmeeting.org.bo/">
-        ...and more &rarr;
-      </a>
-    </p>
-  </div> -->
 </ContentSection>

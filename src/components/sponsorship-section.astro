@@ -1,43 +1,10 @@
 ---
 import Icon from "astro-icon";
-import CompatibilityList from "~/components/compatibility-list.astro";
+import PackageList from "~/components/package-list.astro";
 import ContentSection from "~/components/content-section.astro";
-import type { CompatibilityItem } from "~/types";
+import type { PackageItem } from "~/types";
 
-const frameworks: Array<CompatibilityItem> = [
-  {
-    title: "React",
-    icon: "frameworks/react",
-    url: "https://reactjs.org/",
-  },
-  {
-    title: "Preact",
-    icon: "frameworks/preact",
-    url: "https://preactjs.com/",
-  },
-  {
-    title: "Svelte",
-    icon: "frameworks/svelte",
-    url: "https://svelte.dev/",
-  },
-  {
-    title: "Vue",
-    icon: "frameworks/vue",
-    url: "https://vuejs.org/",
-  },
-  {
-    title: "Solid",
-    icon: "frameworks/solid",
-    url: "https://www.solidjs.com/",
-  },
-  {
-    title: "Lit",
-    icon: "frameworks/lit",
-    url: "https://lit.dev/",
-  },
-];
-
-const platforms: Array<CompatibilityItem> = [
+const platforms: Array<PackageItem> = [
   {
     title: "White Hat",
     icon: "mdi:redhat",
@@ -61,29 +28,22 @@ const platforms: Array<CompatibilityItem> = [
   },
 ];
 ---
-
 <ContentSection title="¿Deseas Auspiciar el Evento?" id="compatibility">
   <Fragment slot="lead">
     Si eres una empresa comprometida con la tecnología, innovación, conocimiento libre y
-     la seguridad informática
-     <br>
-     <br>
-     <span class="text-primary">
+    la seguridad informática
+    <br>
+    <br>
+    <span class="text-primary">
       ¡Esta es tu oportunidad! 
     </span>
-    <!-- Astro <span class="text-primary">plays nice</span>. Bring your own UI{" "}
-    <span class="text-primary">framework</span>
-    and deploy to your favorite <span class="text-primary">platform</span>. -->
   </Fragment>
-  <!-- <CompatibilityList
-    items={frameworks}
-    title="Frameworks"
-    url="https://docs.astro.build/core-concepts/framework-components/"
-  /> -->
-  <CompatibilityList
+
+  <PackageList
     items={platforms}
     title="Nuestros Paquetes"
   />
+  <br>
 
   <a
     href="https://l.linklyhq.com/l/1toer?source=website"
