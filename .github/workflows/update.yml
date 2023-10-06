@@ -20,11 +20,38 @@ jobs:
         ref: main
 
     # Step 2: run this sync action - specify the upstream repo, upstream branch to sync with, and target sync branch
-    - name: Pull upstream changes
+    # - name: Pull upstream changes
+    #   id: sync
+    #   uses: bdougie/Fork-Sync-With-Upstream-action@fork
+    #   with:
+    #     target_sync_branch: main
+    #     upstream_repository: HackLab-BrickHeads-Cochabamba/hackmeeting-2023
+    #     upstream_branch: main
+    #     target_branch: main                       # optional
+    #     # github_token: ${{ secrets.GITHUB_TOKEN }}   # optional, for accessing repos that require authentication
+
+    - name: Sync upstream changes
       id: sync
-      uses: bdougie/Fork-Sync-With-Upstream-action@fork
+      uses: aormsby/Fork-Sync-With-Upstream-action@v3.4
       with:
-        upstream_repository: HackLab-BrickHeads-Cochabamba/hackmeeting-2023
-        upstream_branch: main
-        target_branch: main                       # optional
-        # github_token: ${{ secrets.GITHUB_TOKEN }}   # optional, for accessing repos that require authentication
+        target_sync_branch: main
+        # REQUIRED 'target_repo_token' exactly like this!
+        # target_repo_token: ${{ secrets.GITHUB_TOKEN }}
+        upstream_sync_branch: main
+        upstream_sync_repo: HackLab-BrickHeads-Cochabamba/hackmeeting-2023
+        # upstream_repo_access_token: ${{ secrets.UPSTREAM_REPO_SECRET }}
+
+        # Set test_mode true to run tests instead of the true action!!
+        # test_mode: true
+
+    # Step 3: Display a sample message based on the sync output var 'has_new_commits'
+    - name: New commits found
+      if: steps.sync.outputs.has_new_commits == 'true'
+      run: echo "New commits were found to sync."
+    
+    - name: No new commits
+      if: steps.sync.outputs.has_new_commits == 'false'
+      run: echo "There were no new commits."
+      
+    - name: Show value of 'has_new_commits'
+      run: echo ${{ steps.sync.outputs.has_new_commits }}
