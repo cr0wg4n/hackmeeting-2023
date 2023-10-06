@@ -1,0 +1,22 @@
+name: Dispatcher
+on:
+  push:
+    branches: [main]
+
+jobs:
+  dispatch:
+    name: Dispatch
+    # env:
+    #   PACKAGES_TO_UPGRADE: ${{ needs.run_publish.outputs.packages }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        repo: ['cr0wg4n/hackmeeting-2023']
+    timeout-minutes: 5
+    steps:
+      - name: Dispatch to workflows
+        run: |
+            curl -H "Accept: application/vnd.github.everest-preview+json" \
+            -H "Authorization: token ${{ secrets.HM_TOKEN }}" \
+            --request POST \
+            --data '{"event_type": "update", "client_payload": { "happy": "hacking" }}' https://api.github.com/repos/${{ matrix.repo }}/dispatches
