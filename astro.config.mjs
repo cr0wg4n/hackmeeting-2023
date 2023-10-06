@@ -5,7 +5,7 @@ import vue from "@astrojs/vue";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://hackmeeting.brickheads.space/',
+  site: 'https://0x7e7.hackmeeting.org.bo/',
   integrations: [
     tailwind(), 
     image({
