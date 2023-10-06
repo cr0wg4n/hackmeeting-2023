@@ -17,11 +17,11 @@ jobs:
       - name: Dispatch to workflows
         run: |
             curl \                                                             
-              -H "Accept: application/vnd.github+json" \
-              -H "Authorization: Bearer ${{ secrets.HM_TOKEN }}" \
-              -H "X-GitHub-Api-Version: 2022-11-28" \
-              --request POST \
-              --data '{"event_type": "update", "client_payload": {"happy": "hacking"}}' https://api.github.com/repos/${{ matrix.repo }}/dispatches 
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${{ secrets.HM_TOKEN }}" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            --request POST \
+            --data '{"event_type": "update", "client_payload": {"happy": "hacking"}}' "https://api.github.com/repos/${{ matrix.repo }}/dispatches" 
 
         # run: |
         #     curl -H "Accept: application/vnd.github.everest-preview+json" \
