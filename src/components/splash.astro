@@ -1,17 +1,21 @@
 ---
 import Gof from "./game/gof.astro";
+import Timer from "~/components/timer.vue";
 ---
 
 <section class="relative h-full bg-black">
   <Gof/>
   <div class="relative h-full pointer-events-none">
     <div class="w-full h-full flex items-center justify-center">
-      <div class="w-full flex flex-row items-center gap-5">
+      <div class="w-full flex flex-col items-center gap-5">
         <div
           class="font-strong text-center font-extrabold tracking-tighter text-6xl md:text-8xl w-full gradient-text"
         >
           HACKMEETING
           <br /> 0x7E7
+        </div>
+        <div class="my-6 border-primary border-2 p-2 md:p-4">
+          <Timer client:load />
         </div>
       </div> 
     </div>
