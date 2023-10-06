@@ -35,7 +35,7 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from 'vue';
 
-const days = ref('000')
+const days = ref('00')
 const hours = ref('00')
 const minutes = ref('00')
 const seconds = ref('00')
@@ -65,7 +65,7 @@ onMounted(() => {
     // If the count down is finished, write some text
     if (distance < 0) {
       clearInterval(interval.value)
-      days.value = '0'
+      days.value = '00'
       hours.value = '00'
       minutes.value = '00'
       seconds.value = '00'
