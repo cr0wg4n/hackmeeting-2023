@@ -1,10 +1,21 @@
-[data-theme="light"] {
+/* To enable light support please de-comment */
+/* [data-theme="light"] {
   --color-primary: #d982ba;
   --color-secondary: #e1daac;
   --color-text: #00131e;
   --color-text-offset: #00131e;
   --color-background: theme("colors.gray.50");
   --color-background-offset: theme("colors.gray.100");
+  --color-border: theme("colors.gray.900" / 10%);
+} */
+
+[data-theme="light"] {
+  --color-primary: #d982ba;
+  --color-secondary: #e1daac;
+  --color-text: #f0f0f0;
+  --color-text-offset: #f0f0f0;
+  --color-background: #00131e;
+  --color-background-offset: #1f0e59;
   --color-border: theme("colors.gray.900" / 10%);
 }
 
