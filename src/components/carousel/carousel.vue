@@ -4,16 +4,12 @@
       <div v-if="!image.url" class="overflow-hidden" :class="image.class || 'h-40'">
         <img :src="image.path" :alt="image.alt" class="h-full w-full object-cover">
       </div>
-      <a 
+      <SliderCard
         v-else
-        :href="image.url"
-        class="overflow-hidden hover:cursor-pointer" 
-        :class="image.class || 'h-40'" 
-        target="_blank" 
-        ref="noopener"
-      >
-        <img :src="image.path" :alt="image.alt" class="h-full w-full object-cover">
-      </a>
+        :image="image.path"
+        :url="image.url"
+        :name="image.alt"
+      />
     </Slide>
     <template #addons>
       <Navigation v-if="navigation" />
@@ -25,6 +21,8 @@
 <script setup lang="ts">
 import 'vue3-carousel/dist/carousel.css'
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
+import SliderCard from './slider-card.vue'
+
 
 export interface Images {
   path: any

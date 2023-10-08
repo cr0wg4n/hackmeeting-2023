@@ -4,6 +4,7 @@ import Carousel from "./carousel/carousel.vue";
 import type { Images } from "./carousel/carousel.vue";
 import intersimBlack from "~/assets/sponsor/intersim-black.png";
 import confiared from "~/assets/sponsor/confiared.png";
+import martadero from "~/assets/sponsor/martadero_black.png";
 
 const images: Images[] = [
   {
@@ -17,6 +18,12 @@ const images: Images[] = [
     alt: 'Intersim.io',
     description: 'intersim.io, sponsor gray hat',
     url: 'https://intersim.io/'
+  },
+  {
+    path: martadero.src,
+    alt: 'mARTadero',
+    description: 'mARTadero, sponsor',
+    url: 'https://martadero.org/'
   }
 ]
 
@@ -25,10 +32,10 @@ const breakpoints = {
     itemsToShow: 1,
   },
   1024: {
-    itemsToShow: 1,
+    itemsToShow: 3,
   },
   1280: {
-    itemsToShow: 1,
+    itemsToShow: 3,
   }
 }
 ---
