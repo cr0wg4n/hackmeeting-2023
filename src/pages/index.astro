@@ -8,7 +8,7 @@ import Footer from "~/components/footer.astro";
 import Header from "~/components/header.astro";
 import Intro from "~/components/intro.astro";
 import Splash from "~/components/splash.astro";
-
+import AnnouncementsSection from "~/components/announcements.astro";
 import "~/styles/index.css";
 
 const { generator, site } = Astro;
@@ -78,6 +78,7 @@ const title = 'Hackmeeting 0x7E7'
     <div class="space-y-24 px-5 py-32">
       <Intro />
       <HackmeetingSection />
+      <AnnouncementsSection />
       <SponsorshipSection />
       <SponsorsSection />
       <MemoriesSection />

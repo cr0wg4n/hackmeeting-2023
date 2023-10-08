@@ -1,7 +1,7 @@
 ---
 import { Icon } from "astro-icon";
-import HeroImage from "~/components/hero-image.astro";
 import type { FooterLink } from "~/types";
+import InformationSection from "./information-section.vue";
 
 const links: Array<FooterLink> = [
   {
@@ -27,24 +27,29 @@ const links: Array<FooterLink> = [
 ];
 ---
 
-<footer class="relative flex h-44 items-center justify-center">
-  <div class="absolute inset-0 overflow-hidden opacity-50 bg-black">
-    <!-- <HeroImage /> -->
+<footer>
+  <InformationSection />
+  <div class="h-44">
+    <div style="background-color: #00090e;" class="h-full w-full flex items-center justify-center flex-col">
+      <ul class="grid grid-cols-4 gap-4">
+        {
+          links.map((link) => (
+            <li>
+              <a
+                class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-current p-3"
+                href={link.url}
+                title={link.description}
+              >
+                <span class="sr-only">{link.description}</span>
+                <Icon class="h-full" name={link.icon} />
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <div class="mt-8 md:mt-5 text-xs">
+        Sitio hecho con ❤️ por <a href="https://www.facebook.com/HackLabBrickHeads" target="_blank" rel="noopener" class="text-primary">HackLab Brickheads</a>
+      </div>
+    </div>
   </div>
-  <ul class="relative grid grid-cols-4 gap-4">
-    {
-      links.map((link) => (
-        <li>
-          <a
-            class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-current p-3"
-            href={link.url}
-            title={link.description}
-          >
-            <span class="sr-only">{link.description}</span>
-            <Icon class="h-full" name={link.icon} />
-          </a>
-        </li>
-      ))
-    }
-  </ul>
 </footer>
