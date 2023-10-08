@@ -9,10 +9,15 @@ import Timer from "~/components/timer.vue";
     <div class="w-full h-full flex items-center justify-center">
       <div class="w-full flex flex-col items-center gap-5">
         <div
-          class="font-strong text-center font-extrabold tracking-tighter text-6xl md:text-8xl w-full gradient-text"
+          class="font-strong text-center font-extrabold tracking-tighter text-6xl md:text-8xl w-full"
         >
-          HACKMEETING
-          <br /> 0x7E7
+          <span class="gradient-text">
+            HACKMEETING
+          </span>
+          <br /> 
+          <span class="gradient-text">
+            0x7E7
+          </span>
         </div>
         <div class="my-6 border-primary border-2 p-2 md:p-4">
           <Timer client:load />
