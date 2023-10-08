@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col justify-center items-center h-52">
-    <img :src="image" :alt="name" class="h-full hover:scale-120">
+    <img :src="image" :alt="name" class="h-full hover:scale-125">
     <a 
       class="slider-card__link"
       :href="url"
