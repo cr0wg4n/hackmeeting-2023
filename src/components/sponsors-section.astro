@@ -3,12 +3,20 @@ import ContentSection from "~/components/content-section.astro";
 import Carousel from "./carousel/carousel.vue";
 import type { Images } from "./carousel/carousel.vue";
 import intersimBlack from "~/assets/sponsor/intersim-black.png";
+import confiared from "~/assets/sponsor/confiared.png";
 
 const images: Images[] = [
   {
+    path: confiared.src,
+    alt: 'Confiared',
+    description: 'Confiared, sponsor black hat',
+    url: 'https://www.confiared.com/es/'
+  },
+  {
     path: intersimBlack.src,
     alt: 'Intersim.io',
-    description: 'intersim.io, sponsor gray hat'
+    description: 'intersim.io, sponsor gray hat',
+    url: 'https://intersim.io/'
   }
 ]
 
@@ -38,8 +46,7 @@ const breakpoints = {
     client:load
     images={images}
     viewportHeigth="200px" 
-    numberOfImagesPerPage={4}
-    autoplay={2000}
+    autoplay={4000}
     breakpoints={breakpoints}
     navigation={false}
   />
