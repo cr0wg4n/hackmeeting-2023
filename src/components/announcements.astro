@@ -1,0 +1,43 @@
+---
+import ContentSection from "~/components/content-section.astro";
+
+const announcements = [
+  {
+    name: 'Call For Speakers',
+    url: 'https://l.linklyhq.com/l/1txiC',
+    description: 'Call For Speakers'
+  },
+  {
+    name: 'Call For Workshops',
+    url: 'https://l.linklyhq.com/l/1txiC',
+    description: 'Call For Workshops'
+  },
+  {
+    name: 'Call For Sponsors',
+    url: 'https://l.linklyhq.com/l/1toeu',
+    description: 'Call For Sponsors'
+  }
+]
+---
+
+
+<ContentSection title="Anuncios" id="announcements">
+  <Fragment slot="lead" class="font-sans">
+    <ul>
+      {
+        announcements.map(({ name, url })=>{
+          return <li class="">
+            <a 
+              href={url}
+              class="w-full hover:text-primary hover:cursor-pointer"
+              target="_blank"
+              rel="noopener"
+            >
+              - { name }  
+            </a>
+          </li>
+        })
+      }
+    </ul>
+  </Fragment>
+</ContentSection>
