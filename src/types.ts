@@ -22,3 +22,9 @@ export interface NavItem {
   title: string;
   url: string;
 }
+
+export enum Hats {
+  black = "Black",
+  gray = "Gray",
+  white = "White"
+}
