@@ -1,6 +1,6 @@
 <template>
-  <div class="flex flex-col justify-center items-center h-52">
-    <img :src="image" :alt="name" class="h-full hover:scale-125">
+  <div class="flex flex-col justify-center items-center h-44 md:h-52">
+    <img :src="image" :alt="name" class="h-32 md:h-40 hover:scale-110">
     <a 
       class="slider-card__link"
       :href="url"
@@ -28,6 +28,12 @@ const props = defineProps<SlideCardProps>()
 <style scoped>
 .slider-card__link {
   @apply text-center text-center border-2 border-primary rounded-2xl m-4 w-40 text-sm;
-  @apply hover:cursor-pointer hover:bg-primary text-white;
+  @apply hover:cursor-pointer text-white;
+}
+
+@media (hover: hover) {
+  .slider-card__link {
+    @apply hover:bg-primary;
+  }
 }
 </style>
