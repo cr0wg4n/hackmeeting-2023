@@ -71,9 +71,4 @@ const props = withDefaults(defineProps<CarouselProps>(),{
 .carousel__pagination-button--active::after {
   background: rgba(183, 112, 161, 0.9) !important;
 }
-
-/* .carousel__viewport {
-  height: v-bind(viewportHeigth);
-} */
-
 </style>
