@@ -6,11 +6,19 @@ a,
   @apply active:scale-105;
 }
 
-.gradient-text {
+/* .gradient-text {
   background: linear-gradient(90deg, rgb(240, 226, 134) 0%, rgb(238, 92, 187) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+} */
+
+.gradient-text {
+  background: linear-gradient(180deg,#ab54a7 20%, #b67ca9 55%, #9c499e 80%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 20px rgba(225, 218, 172, .1));
 }
 
 .font-strong {
