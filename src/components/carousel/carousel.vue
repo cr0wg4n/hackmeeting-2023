@@ -1,9 +1,19 @@
 <template>
   <Carousel :breakpoints="breakpoints" :autoplay="autoplay" :wrapAround="true" :transition="300" class="w-full">
     <Slide v-for="(image, index) in images" :key="`${image.alt}-${index}`">
-      <div class="overflow-hidden" :class="image.class || 'h-40'">
+      <div v-if="!image.url" class="overflow-hidden" :class="image.class || 'h-40'">
         <img :src="image.path" :alt="image.alt" class="h-full w-full object-cover">
       </div>
+      <a 
+        v-else
+        :href="image.url"
+        class="overflow-hidden hover:cursor-pointer" 
+        :class="image.class || 'h-40'" 
+        target="_blank" 
+        ref="noopener"
+      >
+        <img :src="image.path" :alt="image.alt" class="h-full w-full object-cover">
+      </a>
     </Slide>
     <template #addons>
       <Navigation v-if="navigation" />
@@ -19,8 +29,9 @@ import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 export interface Images {
   path: any
   alt: string
-  description?: string,
-  class?: string,
+  description?: string
+  class?: string
+  url?: string
 }
 
 export interface CarouselProps {
