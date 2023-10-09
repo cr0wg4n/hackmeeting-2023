@@ -16,6 +16,7 @@
   --color-text-offset: #f0f0f0;
   --color-background: #00131e;
   --color-background-offset: #1f0e59;
+  --color-neutral: #354344;
   --color-border: theme("colors.gray.900" / 10%);
 }
 
@@ -26,5 +27,6 @@
   --color-text-offset: #f0f0f0;
   --color-background: #00131e;
   --color-background-offset: #1f0e59;
+  --color-neutral: #354344;
   --color-border: theme("colors.gray.900" / 10%);
 }
