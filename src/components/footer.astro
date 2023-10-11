@@ -3,7 +3,7 @@ import { Icon } from "astro-icon";
 import type { FooterLink } from "~/types";
 import InformationSection from "./information-section.vue";
 import logoMartadero from "~/assets/sponsor/martadero_black.png";
-import logoHacklab from "~/assets/images/hacklab.png";
+import logoHacklab from "~/assets/images/hacklab_square.png";
 
 const links: Array<FooterLink> = [
   {
@@ -33,15 +33,15 @@ const links: Array<FooterLink> = [
   <InformationSection />
   <div class="h-60">
     <div style="background-color: #00090e;" class="h-full w-full flex items-center justify-center flex-col">
-    <div class="text-xs p-4 m-3">
+    <div class="p-4 m-3">
       <div class="flex flex-row items-center gap-1">
-        <div>
+        <div class="text-xs">
           Organizan: 
         </div>
         <a class="h-20 active:scale-105 hover:cursor-pointer" href="https://martadero.org/" target="_blank" rel="noopener">
           <img src={logoMartadero.src} alt="" class="h-full">
         </a>
-        <a class="h-10 active:scale-105 hover:cursor-pointer" href="https://hacklab.brickheads.space" target="_blank" rel="noopener">
+        <a class="h-16 active:scale-105 hover:cursor-pointer" href="https://hacklab.brickheads.space" target="_blank" rel="noopener">
           <img src={logoHacklab.src} alt="" class="h-full">
         </a>
       </div>

@@ -14,6 +14,15 @@ a,
   filter: drop-shadow(0 0 20px rgba(225, 218, 172, .1));
 }
 
+
+.gradient-text-yellow {
+  background: linear-gradient(180deg,#b9b070 20%, #e0ddc4 55%, #c0b773 80%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 20px rgba(225, 218, 172, .1));
+}
+
 .font-strong {
   letter-spacing: 1px;
 } 
