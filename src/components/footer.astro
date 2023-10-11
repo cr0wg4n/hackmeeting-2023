@@ -2,6 +2,8 @@
 import { Icon } from "astro-icon";
 import type { FooterLink } from "~/types";
 import InformationSection from "./information-section.vue";
+import logoMartadero from "~/assets/sponsor/martadero_black.png";
+import logoHacklab from "~/assets/images/hacklab.png";
 
 const links: Array<FooterLink> = [
   {
@@ -29,14 +31,27 @@ const links: Array<FooterLink> = [
 
 <footer>
   <InformationSection />
-  <div class="h-44">
+  <div class="h-60">
     <div style="background-color: #00090e;" class="h-full w-full flex items-center justify-center flex-col">
+    <div class="text-xs p-4 m-3">
+      <div class="flex flex-row items-center gap-1">
+        <div>
+          Organizan: 
+        </div>
+        <a class="h-20 active:scale-105 hover:cursor-pointer" href="https://martadero.org/" target="_blank" rel="noopener">
+          <img src={logoMartadero.src} alt="" class="h-full">
+        </a>
+        <a class="h-10 active:scale-105 hover:cursor-pointer" href="https://hacklab.brickheads.space" target="_blank" rel="noopener">
+          <img src={logoHacklab.src} alt="" class="h-full">
+        </a>
+      </div>
+    </div>
       <ul class="grid grid-cols-4 gap-4">
         {
           links.map((link) => (
             <li>
               <a
-                class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-current p-3"
+                class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-current p-2"
                 href={link.url}
                 title={link.description}
               >
