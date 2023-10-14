@@ -19,12 +19,12 @@ const images: Images[] = [
     description: 'intersim.io, sponsor gray hat',
     url: 'https://intersim.io/'
   },
-  {
-    path: martadero.src,
-    alt: 'mARTadero',
-    description: 'mARTadero, sponsor',
-    url: 'https://martadero.org/'
-  }
+  // {
+  //   path: martadero.src,
+  //   alt: 'mARTadero',
+  //   description: 'mARTadero, sponsor',
+  //   url: 'https://martadero.org/'
+  // }
 ]
 
 const breakpoints = {
@@ -32,10 +32,10 @@ const breakpoints = {
     itemsToShow: 1,
   },
   1024: {
-    itemsToShow: 3,
+    itemsToShow: 1,
   },
   1280: {
-    itemsToShow: 3,
+    itemsToShow: 1,
   }
 }
 ---
@@ -58,8 +58,3 @@ const breakpoints = {
     navigation={false}
   />
 </ContentSection>
-
-<script>
-  console.log('demo')
-
-</script>
