@@ -1,7 +1,3 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
   <div class="grid grid-cols-2">
     <div class="flex justify-center items-center h-72 col-span-2 md:col-span-1">
