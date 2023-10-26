@@ -1,4 +1,5 @@
 ---
+import Icon from "astro-icon";
 import ContentSection from "~/components/content-section.astro";
 
 const announcements = [
@@ -39,5 +40,15 @@ const announcements = [
         })
       }
     </ul>
+    <div class="h-5"></div>
+    <a
+      href="https://www.facebook.com/events/1073193807428130/?ref=newsfeed"
+      target="_blank"
+      rel="noopener"
+      class="btn-hm"
+    >
+      <Icon pack="ph" name="ticket" class="h-10 -rotate-45" />
+      <span>Registrate al evento</span>
+    </a>
   </Fragment>
 </ContentSection>
