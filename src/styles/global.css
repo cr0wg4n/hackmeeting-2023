@@ -2,8 +2,13 @@
 a,
 .btn {
   @apply transition-colors duration-200;
-  @apply hover:text-secondary;
+  @apply hover:text-primary;
   @apply active:scale-105;
+}
+
+.btn-hm {
+  @apply flex items-center justify-center gap-3 border-2 border-primary px-6 py-4 rounded-3xl;
+  @apply hover:bg-primary hover:text-white;
 }
 
 .gradient-text {
