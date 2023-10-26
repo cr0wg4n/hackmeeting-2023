@@ -5,6 +5,7 @@ import type { Images } from "./carousel/carousel.vue";
 import intersimBlack from "~/assets/sponsor/intersim-black.png";
 import confiared from "~/assets/sponsor/confiared.png";
 import digitalHarbor from "~/assets/sponsor/dh.png";
+import ethicalHacking from "~/assets/sponsor/ehc.png";
 // import martadero from "~/assets/sponsor/martadero_black.png";
 
 const images: Images[] = [
@@ -25,6 +26,12 @@ const images: Images[] = [
     alt: 'Intersim.io',
     description: 'intersim.io, sponsor gray hat',
     url: 'https://intersim.io/'
+  },
+  {
+    path: ethicalHacking.src,
+    alt: 'Ethical Hacking Consultores',
+    description: 'ehcgroup.io, sponsor gray hat',
+    url: 'https://ehcgroup.io/'
   }
 ]
 
@@ -33,10 +40,10 @@ const breakpoints = {
     itemsToShow: 3,
   },
   1024: {
-    itemsToShow: 3,
+    itemsToShow: 4,
   },
   1280: {
-    itemsToShow: 3,
+    itemsToShow: 4,
   }
 }
 ---
