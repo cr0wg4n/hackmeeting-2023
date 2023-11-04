@@ -5,9 +5,9 @@ import Timer from "~/components/timer.vue";
 ---
 
 <section class="relative h-full bg-black">
-  <BoliviaFlag />
   <Gof/>
-  <div class="relative h-full pointer-events-none">
+  <BoliviaFlag />
+  <div class="relative h-full select-none">
     <div class="w-full h-full flex items-center justify-center">
       <div class="w-full flex flex-col items-center gap-5">
         <div
@@ -23,6 +23,12 @@ import Timer from "~/components/timer.vue";
         </div>
         <div class="my-6 border-primary border-2 p-2 md:p-4">
           <Timer client:load />
+        </div>
+        <div class="m-12 text-center md:text-xl font-medium py-2 md:p-6 border-primary border-2 animate-opacity-announcement">
+          Postulaciones abiertas: 
+          <a class="text-secondary hover:opacity-80" href="https://l.linklyhq.com/l/1txiC?source=website" target="_blank" rel="noopener">Speakers</a>, 
+          <a class="text-secondary hover:opacity-80" href="https://l.linklyhq.com/l/1u4v0?source=website" target="_blank" rel="noopener">Workshops</a> y 
+          <a class="text-secondary hover:opacity-80" href="https://l.linklyhq.com/l/1uUZ7?source=website" target="_blank" rel="noopener">Villages</a>
         </div>
       </div> 
     </div>

@@ -31,3 +31,19 @@ a,
 .font-strong {
   letter-spacing: 1px;
 } 
+
+.animate-opacity-announcement {
+  animation: opacity-announcement 3s infinite;
+}
+
+@keyframes opacity-announcement {
+  0% {
+    box-shadow: rgba(217, 130, 186, 0.2) 0px 0px 50px 0px;
+  }
+  50% {
+    box-shadow: rgba(217, 130, 186, 0.5) 0px 0px 50px 0px;
+  }
+  100% {
+    box-shadow: rgba(217, 130, 186, 0.2) 0px 0px 50px 0px;
+  }
+}
