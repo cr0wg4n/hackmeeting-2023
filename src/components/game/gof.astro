@@ -92,10 +92,14 @@
       ctx?.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
       for(let i = 0; i < GAME_WIDTH; i+= SQUARE_SIZE) {
         for(let j = 0; j < GAME_HEIGHT; j+= SQUARE_SIZE) {
-          if(ctx && state[i / SQUARE_SIZE][j / SQUARE_SIZE]) {
-            // ctx.fillStyle =  Math.random() < 0.1 ? 'rgba(255,255,255,0.2)':'rgba(255,255,255,0.3)'
-            ctx.fillStyle =  'rgba(225,218,172, 0.20)'
-            ctx?.fillRect(i, j, SQUARE_SIZE, SQUARE_SIZE);
+          try {
+            if(ctx && state[i / SQUARE_SIZE][j / SQUARE_SIZE]) {
+              // ctx.fillStyle =  Math.random() < 0.1 ? 'rgba(255,255,255,0.2)':'rgba(255,255,255,0.3)'
+              ctx.fillStyle =  'rgba(225,218,172, 0.20)'
+              ctx?.fillRect(i, j, SQUARE_SIZE, SQUARE_SIZE)
+            }
+          } catch (error) {
+            continue
           }
         }
       }
