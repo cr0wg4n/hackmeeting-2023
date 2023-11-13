@@ -1,46 +1,5 @@
 ---
-import { Icon } from "astro-icon";
 import ContentSection from "~/components/content-section.astro";
-import type { FeatureItem } from "~/types";
-
-const features: Array<FeatureItem> = [
-  {
-    title: "Diviertete",
-    description:
-      "Un evento donde encontrarás a personas tan aficionadas, apasionadas y enamoradas de la tecnología como tu, aprender algo nuevo es divertido",
-    icon: "mdi:party-popper",
-  },
-  {
-    title: "Aprende algo nuevo",
-    description:
-      "Cada persona es un mundo, date la oportunidad de conectar, conocer y empezar una conversación interesante. Nadie lo sabe todo y seguramente puedes enseñarle algo nuevo a otros",
-    icon: "mdi:gift-open",
-  },
-  {
-    title: "Conecta",
-    description:
-      "Participa de las actividades, involucrate en el evento, lo que puedes hacer solo, es grandioso, imaginate lo que puedes hacer en compañia",
-    icon: "mdi:connection",
-  },
-  {
-    title: "Comparte",
-    description:
-      "No sientas pena por preguntar o compartir tus experiencias, es un espacio en el que aprenderemos en conjunto, no guardes tus conocimientos, por acá hay muchos curiosos como tú",
-    icon: "mdi:graph",
-  },
-  {
-    title: "Contribuye",
-    description:
-      "¿Te gusto una charla, taller, actividad, platica interna? sumate a alguna de las muchas comunidades que asistirán y organizan el evento. Haz que tus ideas transciendan a la sociedad",
-    icon: "mdi:handshake",
-  },
-  {
-    title: "En Comunidad",
-    description:
-      "Este es un evento hecho por y para las comunidades, sientete en la libertad de unirte, sumar esfuerzos, divertirte, aprender, compartir experiencias y contribuir en comunidad",
-    icon: "mdi:account-group",
-  },
-];
 ---
 
 <ContentSection title="¿Qué es un Hackmeeting?" id="hackmeeting">
@@ -56,17 +15,4 @@ const features: Array<FeatureItem> = [
       Un evento autogestionado, abierto, libre y gratuito para todo público
     </span>
   </Fragment>
-  <ul class="grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-    {
-      features.map(({ title, description, icon }) => (
-        <li class="flex flex-col items-center gap-4 border border-default bg-neutral p-6">
-          <div class="h-16 w-16 rounded-full border-2 p-3 border-primary">
-            <Icon name={icon} />
-          </div>
-          <p class="text-center font-extrabold text-xl">{title}</p>
-          <p class="text-center text-offset text-sm">{description}</p>
-        </li>
-      ))
-    }
-  </ul>
 </ContentSection>
