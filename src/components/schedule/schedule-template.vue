@@ -84,18 +84,23 @@ const getHour = (date: Date) => {
     </thead>
     <tbody>
       <tr v-for="speaker, index in speakers" class="relative">
-        <div v-if="speaker.keynote" class="absolute rounded-xl my-2 text-sm w-full text-center">
-          <span class="bg-primary px-4 rounded-lg">
-            Keynote
-          </span>
-        </div>
         <td class="flex flex-row justify-center items-center">
-          <div class="p-4 hidden md:flex">
-              <img :src="image" alt="" class="hm-table__image rounded-full">
+          <div class="p-4 hidden md:flex relative">
+            <img :src="image" alt="" class="hm-table__image rounded-full">
+            <div v-if="speaker.keynote" class="absolute bottom-0">
+              <span class="text-xs bg-primary px-3 rounded-lg">
+                Keynote
+              </span>
+            </div>
           </div>
           <div class="flex flex-col text-sm">
-              <div class="flex md:hidden justify-center p-2">
+              <div class="flex md:hidden justify-center p-2 relative">
                 <img :src="image" alt="" class="hm-table__image rounded-full">
+                <div v-if="speaker.keynote" class="absolute bottom-0">
+                  <span class="text-xs bg-primary px-3 rounded-lg">
+                    Keynote
+                  </span>
+                </div>
               </div>
               <div>{{ speaker.talkName }}</div>
               <div 
