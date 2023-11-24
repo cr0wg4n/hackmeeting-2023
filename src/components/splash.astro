@@ -2,6 +2,7 @@
 import Gof from "./game/gof.astro";
 import BoliviaFlag from './flag-image.vue'
 import Timer from "~/components/timer.vue";
+import Icon from "astro-icon";
 ---
 
 <section class="relative h-full bg-black">
@@ -24,8 +25,17 @@ import Timer from "~/components/timer.vue";
         <div class="my-6 border-primary border-2 p-2 md:p-4">
           <Timer client:load />
         </div>
+        <a
+          href="https://forms.gle/q25DZ28ofRCppkH17"
+          target="_blank"
+          rel="noopener"
+          class="btn-hm animate-opacity-announcement bg-primary text-xs md:text-lg"
+        >
+          <Icon pack="ph" name="ticket" class="h-10 -rotate-45" />
+          <span class="font-bold uppercase">Registrate al evento</span>
+        </a>
         <!-- <div class="p-4">
-          <div class="max-w-4xl text-center md:text-md font-medium py-2 md:p-6 border-primary border-2 animate-opacity-announcement">
+          <div class="max-w-4xl text-center md:text-md font-medium py-2 md:p-6 border-primary border-2 ">
             Postulaciones abiertas: 
             <a class="text-secondary hover:opacity-80" href="https://l.linklyhq.com/l/1txiC?source=website" target="_blank" rel="noopener">Speakers</a>, 
             <a class="text-secondary hover:opacity-80" href="https://l.linklyhq.com/l/1u4v0?source=website" target="_blank" rel="noopener">Workshops</a> y 
