@@ -11,6 +11,7 @@ a,
   @apply hover:bg-primary hover:text-white;
 }
 
+
 .gradient-text {
   background: linear-gradient(180deg,#ab54a7 20%, #b67ca9 55%, #9c499e 80%);
   -webkit-background-clip: text;
