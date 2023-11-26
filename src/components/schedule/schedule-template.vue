@@ -38,7 +38,7 @@ const speakers = ref<Speaker[]>([
     }
   },
   {
-    talkName: 'Como hace un asado malditooo',
+    talkName: 'Como hacer un asado malditooo asd',
     name: 'Mauricio Matias',
     detail: `Mollit voluptate dolor id consequat. Sunt ullamco qui ad commodo. Ut duis excepteur deserunt duis esse ad aliquip pariatur officia excepteur. Ex excepteur reprehenderit duis excepteur commodo quis eu aliqua fugiat irure et aute nostrud anim. Labore consequat ipsum commodo aliquip esse fugiat deserunt ex voluptate laboris culpa veniam. Id aliquip commodo commodo ut est sunt enim id velit sint cillum aute sunt consectetur. Velit sunt nulla duis non qui incididunt voluptate non Lorem mollit.
 
@@ -77,48 +77,43 @@ const getHour = (date: Date) => {
   <table class="hm-table">
     <thead>
       <tr class="hm-table__title">
-        <th>Charla</th>
         <th>Speaker</th>
+        <th>Charla</th>
         <th>Hora</th>
       </tr>
     </thead>
     <tbody>
       <tr v-for="speaker, index in speakers" class="relative">
-        <td class="flex flex-row justify-center items-center">
-          <div class="p-4 hidden md:flex relative">
-            <img :src="image" alt="" class="hm-table__image rounded-full">
-            <div v-if="speaker.keynote" class="absolute bottom-0">
-              <span class="text-xs bg-primary px-3 rounded-lg">
-                Keynote
-              </span>
+        <td class="text-xs">
+          <div class="flex flex-col">
+            <div class="flex justify-center p-2 relative">
+              <img :src="image" alt="" class="hm-table__image rounded-full">
+              <div v-if="speaker.keynote" class="absolute bottom-0">
+                <span class="text-xxs bg-primary px-2 rounded-lg font-semibold">
+                  Keynote
+                </span>
+              </div>
+            </div>
+            <div class="text-center text-xxs">
+              {{ speaker.name}}
             </div>
           </div>
-          <div class="flex flex-col text-sm">
-              <div class="flex md:hidden justify-center p-2 relative">
-                <img :src="image" alt="" class="hm-table__image rounded-full">
-                <div v-if="speaker.keynote" class="absolute bottom-0">
-                  <span class="text-xs bg-primary px-3 rounded-lg">
-                    Keynote
-                  </span>
-                </div>
-              </div>
-              <div>{{ speaker.talkName }}</div>
-              <div 
-                class="text-center text-primary hover:cursor-pointer active:scale-105 select-none text-sm font-bold py-2"
-                @click="showDetails(index)"
-              >
-                {{ !itemsToShow.has(index) ? 'Más detalle':'Menos Detalle' }}
-              </div>
-              <div v-if="itemsToShow.has(index)" class="text-sm text-justify opacity-80 max-w-xs">
-                {{ speaker.detail }}
-              </div>
+        </td>
+        <td class="text-xs">
+          <div class="text-xs font-semibold text-center">{{ speaker.talkName }}</div>
+          <div 
+            class="text-center text-primary hover:cursor-pointer active:scale-105 select-none py-2 text-xxs"
+            @click="showDetails(index)"
+          >
+            {{ !itemsToShow.has(index) ? '[ Más Detalle ]':'[ Menos Detalle ]' }}
+          </div>
+          <div v-if="itemsToShow.has(index)" class="text-xs text-justify opacity-80 max-w-xs">
+            {{ speaker.detail }}
           </div>
         </td>
-        <td class="text-sm">
-          {{ speaker.name}}
-        </td>
-        <td class="text-sm">
-          {{ getHour(speaker.time.start) }} a {{ getHour(speaker.time.end) }}
+        <td class="text-xxs">
+          <span class="font-semibold">{{ getHour(speaker.time.start) }}</span> a 
+          <span class="font-semibold">{{ getHour(speaker.time.end) }}</span>
         </td>
       </tr>
     </tbody>
@@ -140,7 +135,7 @@ th, td {
   @apply text-secondary;
 }
 .hm-table__image {
-  max-width: 80px !important;
-  min-width: 80px !important;
+  max-width: 60px !important;
+  min-width: 40px !important;
 }
 </style>

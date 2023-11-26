@@ -37,6 +37,10 @@ a,
   animation: opacity-announcement 3s infinite;
 }
 
+.text-xxs {
+  font-size: 0.75rem;
+}
+
 @keyframes opacity-announcement {
   0% {
     box-shadow: rgba(217, 130, 186, 0.2) 0px 0px 50px 0px;
