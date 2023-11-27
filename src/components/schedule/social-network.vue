@@ -3,7 +3,7 @@
     <a v-for="{ icon, url } in icons" 
       :key="icon" 
       :href="url"
-      class="bg-secondary rounded-full h-4 w-4 flex justify-center items-center hover:scale-110"
+      class="bg-secondary rounded-full h-5 w-5 flex justify-center items-center hover:scale-110"
     >
       <span :class="icon" class="bg-neutral"/>
     </a>

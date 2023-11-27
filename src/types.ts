@@ -28,3 +28,16 @@ export enum Hats {
   gray = "Gray",
   white = "White"
 }
+
+
+export interface Speaker {
+  talkName: string
+  name: string
+  detail: string
+  imageSrc: string
+  time: {
+    start: Date,
+    end: Date
+  },
+  keynote?: boolean
+}
