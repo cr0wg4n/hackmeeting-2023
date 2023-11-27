@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref} from 'vue'
+import SocialNetwork from './social-network.vue'
 
 interface Speaker {
   talkName: string
@@ -39,7 +40,7 @@ const speakers = ref<Speaker[]>([
   },
   {
     talkName: 'Como hacer un asado malditooo asd',
-    name: 'Mauricio Matias',
+    name: 'Going Deeper',
     detail: `Mollit voluptate dolor id consequat. Sunt ullamco qui ad commodo. Ut duis excepteur deserunt duis esse ad aliquip pariatur officia excepteur. Ex excepteur reprehenderit duis excepteur commodo quis eu aliqua fugiat irure et aute nostrud anim. Labore consequat ipsum commodo aliquip esse fugiat deserunt ex voluptate laboris culpa veniam. Id aliquip commodo commodo ut est sunt enim id velit sint cillum aute sunt consectetur. Velit sunt nulla duis non qui incididunt voluptate non Lorem mollit.
 
 Enim et mollit in aute nisi non. Labore sunt magna consequat id duis excepteur pariatur. Et nulla non incididunt aute ut ex id et non culpa ipsum. Est ea non dolor deserunt Lorem culpa. Qui eiusmod irure sit elit deserunt tempor ad cillum mollit. Labore magna dolor mollit sunt ut minim do ipsum irure. Commodo Lorem anim nisi consectetur velit mollit elit deserunt veniam velit ad. Nostrud Lorem laboris nostrud amet cupidatat adipisicing cillum exercitation ad nulla cillum amet elit. Veniam in deserunt esse occaecat nulla non proident.
@@ -84,12 +85,13 @@ const getHour = (date: Date) => {
     </thead>
     <tbody>
       <tr v-for="speaker, index in speakers" class="relative">
-        <td class="text-xs">
+        <td class="text-xs relative">
+          <SocialNetwork class="absolute z-10 mt-2 left-2"/>
           <div class="flex flex-col">
             <div class="flex justify-center p-2 relative">
-              <img :src="image" alt="" class="hm-table__image rounded-full">
+              <img :src="image" class="hm-table__image rounded-full">
               <div v-if="speaker.keynote" class="absolute bottom-0">
-                <span class="text-xxs bg-primary px-2 rounded-lg font-semibold">
+                <span class="text-3xs bg-primary px-2 rounded-lg font-semibold">
                   Keynote
                 </span>
               </div>

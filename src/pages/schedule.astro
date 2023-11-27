@@ -3,7 +3,7 @@ import "@fontsource-variable/inter";
 import Footer from "~/components/footer.astro";
 import ContentSection from "~/components/content-section.astro";
 import "~/styles/index.css";
-import ScheduleTable from '~/components/schedule/schedule-template.vue'
+import ScheduleContainer from '~/components/schedule/schedule-container.vue'
 
 const { generator, site } = Astro;
 const image = new URL("social.jpg", site);
@@ -62,7 +62,7 @@ const title = 'HM2023 - Cronograma'
     <ContentSection title="Nuestro Cronograma" id="hackmeeting">
       <Fragment slot="lead">
           <div class="mx-2">
-            <ScheduleTable client:only/>
+            <ScheduleContainer client:only/>
           </div>
       </Fragment>
     </ContentSection>
