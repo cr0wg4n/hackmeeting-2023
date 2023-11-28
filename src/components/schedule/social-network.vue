@@ -1,8 +1,10 @@
 <template>
-  <div class="flex flex-col gap-1">
-    <a v-for="{ icon, url } in icons" 
+  <div v-if="socialNetworks?.length" class="flex gap-1" :class="vertical?'flex-col':'flex-row'">
+    <a v-for="{ type: icon, url } in socialNetworks" 
       :key="icon" 
       :href="url"
+      target="_blank"
+      rel="noopener"
       class="bg-secondary rounded-full h-5 w-5 flex justify-center items-center hover:scale-110"
     >
       <span :class="icon" class="bg-neutral"/>
@@ -11,20 +13,15 @@
 </template>
 
 <script setup lang="ts">
-const icons = [
-  {
-    icon: 'icon-[mdi--github] text-xs',
-    url: ''
-  },
-  {
-    icon: 'icon-[mdi--web] text-xs',
-    url: ''
-  },
-  {
-    icon: 'icon-[mdi--instagram] text-xs',
-    url: ''
-  }
-]
+import type { SocialNetwork } from '~/types';
+
+const props = withDefaults(defineProps<{
+  socialNetworks?: SocialNetwork[],
+  vertical?: boolean
+}>(), {
+  vertical: true,
+  socialNetworks: () => []
+})
 </script>
 
 <style scoped>

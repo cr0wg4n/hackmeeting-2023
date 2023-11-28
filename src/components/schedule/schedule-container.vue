@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { ref} from 'vue'
 import SocialNetwork from './social-network.vue'
-import type { Speaker } from '~/types';
+import type { HMContributor } from '~/types';
 
 const props = defineProps<{
-  speakers: Speaker[],
+  speakers: HMContributor[],
   headers: [string, string, string]
 }>()
 
@@ -16,7 +16,10 @@ const showDetails = (id: number) => {
     itemsToShow.value.add(id)
   }
 }
-const getHour = (date: Date) => {
+const getHour = (date: Date | string) => {
+  if (typeof date === 'string') {
+    return date
+  }
   return date.toString().slice(16,21)
 }
 </script>
@@ -33,7 +36,7 @@ const getHour = (date: Date) => {
     <tbody>
       <tr v-for="speaker, index in speakers" class="relative">
         <td class="text-xs relative">
-          <SocialNetwork class="absolute z-10 mt-2 left-2"/>
+          <SocialNetwork :socialNetworks="speaker.socialNetworks" class="absolute z-10 mt-2 left-2"/>
           <div class="flex flex-col">
             <div class="flex justify-center p-2 relative ml-3">
               <img :src="speaker.imageSrc" class="hm-table__image rounded-full">
