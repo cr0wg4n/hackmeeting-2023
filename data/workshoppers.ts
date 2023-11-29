@@ -37,15 +37,15 @@ const workshoppers: Workshopper[] = [
     socialNetworks: [
       {
         type: RRSS.twitter,
-        url: 'twitter.com/sniferl4bs'
+        url: 'https://twitter.com/sniferl4bs'
       },
       {
         type: RRSS.github,
-        url: 'github.com/snifer'
+        url: 'https://github.com/snifer'
       },
       {
         type: RRSS.youtube,
-        url: 'youtube.com/sniferl4bs'
+        url: 'https://youtube.com/sniferl4bs'
       }
     ]
   },
@@ -62,7 +62,7 @@ const workshoppers: Workshopper[] = [
     socialNetworks: [
       {
         type: RRSS.twitter,
-        url: 'Twitter.com/tebot'
+        url: 'https://twitter.com/tebot'
       },
     ]
   },
