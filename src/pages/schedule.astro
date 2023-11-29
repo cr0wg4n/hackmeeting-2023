@@ -1,8 +1,15 @@
 ---
 import "@fontsource-variable/inter";
 import Footer from "~/components/footer.astro";
-import ContentSection from "~/components/content-section.astro";
 import "~/styles/index.css";
+import ScheduleContainer from '~/components/schedule/schedule-container.vue'
+import ScheduleVillageContainer from '~/components/schedule/schedule-village-container.vue'
+import { speakersRoomA, speakersRoomB } from '../../data/speakers' 
+import { workshoppers } from '../../data/workshoppers' 
+import { villages } from '../../data/villages' 
+import ScheduleTitle from '~/components/schedule/schedule-title.vue'
+import mapImage from '~/assets/items/map.png'
+import Header from "~/components/header.astro";
 
 const { generator, site } = Astro;
 const image = new URL("social.jpg", site);
@@ -57,13 +64,43 @@ const title = 'HM2023 - Cronograma'
   <body
     class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
   >
-    <div class="h-14" />
-    <ContentSection title="Nuestro Cronograma" id="hackmeeting">
-      <Fragment slot="lead">
-      </Fragment>
-    </ContentSection>
+    <h2
+      class="font-strong gradient-text text-center font-extrabold tracking-tight md:text-6xl text-4xl mt-10"
+    >
+      Nuestro Cronograma
+    </h2>
+    <div class="flex justify-center">
+      <a href="/" class="btn-hm w-60 mt-10 text-sm">Volver al Sitio Principal</a>
+    </div>
+    <div class="flex flex-col items-center mb-20">
+      <div class="max-w-2xl mx-3">
+        <div class="flex justify-center mt-16 mb-24">
+          <div class="w-full md:w-2/3 border-primary border-2 p-5 px-10 relative animate-opacity-announcement">
+            <img src={ mapImage.src } alt="martadero maps">
+            <div class="w-full text-center mt-5">Mapa Oficial HM23</div>
+            <div class="w-full text-center text-xxs opacity-85">🔍 Busca los mensajes ocultos</div>
+          </div>
+        </div>
+        <!-- <div>
+          <ScheduleTitle title="low-level-room"/>
+          <ScheduleContainer speakers={ speakersRoomA } headers={ ['Speaker', 'Charla', 'Hora']} client:only/>
+        </div>
 
-    <div style="height: 1000px;"></div>
+        <div>
+          <ScheduleTitle title="neo-city-room"/>
+          <ScheduleContainer speakers={ speakersRoomB } headers={ ['Speaker', 'Charla', 'Hora']} client:only/>
+        </div>
+
+        <div>
+          <ScheduleTitle title="the-villages" subtitle="Exposiciones / Talleres / Actividades de 10:00 a 14:00 ⏲️"/>
+          <ScheduleVillageContainer villages={ villages } headers={ ['Vilage', 'Tribus', 'Hora']} client:only/>
+        </div> -->
+        <div>
+          <ScheduleTitle title="training-center" subtitle="Trae tu computadora 💻" hoverTitle="Sala de Workshops"/>
+          <ScheduleContainer speakers={ workshoppers } headers={ ['Tallerista', 'Workshop', 'Hora']} client:only/>
+        </div>
+      </div>
+    </div>
     <Footer />
   </body>
 </html>
