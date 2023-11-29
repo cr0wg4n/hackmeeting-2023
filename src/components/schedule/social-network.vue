@@ -1,5 +1,5 @@
 <template>
-  <div v-if="socialNetworks?.length" class="flex gap-1" :class="vertical?'flex-col':'flex-row'">
+  <div v-if="socialNetworks?.length" class="flex gap-2" :class="vertical?'flex-col':'flex-row'">
     <a v-for="{ type: icon, url } in socialNetworks" 
       :key="icon" 
       :href="url"

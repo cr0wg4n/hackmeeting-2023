@@ -8,6 +8,7 @@ const navItems: Array<NavItem> = [
   { title: "Anuncios", url: "#announcements" },
   { title: "HMs Previos", url: "#memories" },
   { title: "Actividades", url: "#activities" },
+  { title: "Cronograma", url: "/schedule", lights:true},
 ];
 ---
 
@@ -23,8 +24,8 @@ const navItems: Array<NavItem> = [
       <nav class="hidden sm:block">
         <ul class="flex items-center gap-6">
           {
-            navItems.map(({ title, url }) => (
-              <li>
+            navItems.map(({ title, url, lights }) => (
+              <li class = {lights ? 'border-primary border-2 rounded-full px-3':''}>
                 <a class="text-md btn font-sans font-semibold" href={url}>
                   {title}
                 </a>
@@ -62,8 +63,8 @@ const navItems: Array<NavItem> = [
           <nav>
             <ul class="flex flex-col">
               {
-                navItems.map(({ title, url }) => (
-                  <li>
+                navItems.map(({ title, url, lights }) => (
+                  <li class = {lights ? 'border-primary border-2 rounded-full px-3':''}>
                     <a class="block py-4 text-center text-lg btn" href={url}>
                       {title}
                     </a>

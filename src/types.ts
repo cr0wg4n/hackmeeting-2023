@@ -21,6 +21,7 @@ export interface FooterLink {
 export interface NavItem {
   title: string;
   url: string;
+  lights?: boolean;
 }
 
 export enum Hats {
@@ -74,5 +75,7 @@ export enum RRSS {
   instagram = 'icon-[mdi--instagram]',
   github = 'icon-[mdi--github]',
   web = 'icon-[mdi--web]',
-  linkeding = 'icon-[mdi--web]'
+  linkedin = 'icon-[mdi--linkedin]',
+  youtube = 'icon-[mdi--youtube]',
+  twitter = 'icon-[mdi--twitter]',
 }

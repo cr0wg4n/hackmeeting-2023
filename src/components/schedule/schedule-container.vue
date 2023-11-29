@@ -36,22 +36,22 @@ const getHour = (date: Date | string) => {
     <tbody>
       <tr v-for="speaker, index in speakers" class="relative">
         <td class="text-xs relative">
-          <SocialNetwork :socialNetworks="speaker.socialNetworks" class="absolute z-10 mt-2 left-2"/>
+          <SocialNetwork :socialNetworks="speaker.socialNetworks" class="absolute z-10 md:left-5 top-1/2 transform -translate-x-1/2 -translate-y-1/2"/>
           <div class="flex flex-col">
-            <div class="flex justify-center p-2 relative ml-3">
+            <div class="flex justify-center p-2 relative">
               <img :src="speaker.imageSrc" class="hm-table__image rounded-full">
               <div v-if="speaker.keynote" class="absolute bottom-0">
-                <span class="text-3xs bg-primary px-2 rounded-lg font-semibold">
+                <span class="text-xs bg-primary px-2 rounded-lg font-semibold">
                   Keynote
                 </span>
               </div>
             </div>
-            <div class="text-center text-xxs">
+            <div class="text-center text-xxs mt-1 w-full">
               {{ speaker.name}}
             </div>
           </div>
         </td>
-        <td class="text-xs">
+        <td class="text-xs max-w-xs">
           <div class="text-xs font-semibold text-center">{{ speaker.talkName }}</div>
           <div 
             class="text-center text-primary hover:cursor-pointer active:scale-105 select-none py-2 text-xxs"
@@ -59,11 +59,11 @@ const getHour = (date: Date | string) => {
           >
             {{ !itemsToShow.has(index) ? '[ Más Detalle ]':'[ Menos Detalle ]' }}
           </div>
-          <div v-if="itemsToShow.has(index)" class="text-xs text-justify opacity-80 max-w-xs">
+          <div v-if="itemsToShow.has(index)" class="text-xs opacity-80">
             {{ speaker.detail }}
           </div>
         </td>
-        <td class="text-xxs">
+        <td class="text-xxs text-center">
           <span class="font-semibold">{{ getHour(speaker.time.start) }}</span> a 
           <span class="font-semibold">{{ getHour(speaker.time.end) }}</span>
         </td>
