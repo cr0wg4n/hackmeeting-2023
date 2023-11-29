@@ -16,6 +16,8 @@
   "devDependencies": {
     "@astrojs/image": "^0.17.2",
     "@astrojs/tailwind": "^4.0.0",
+    "@iconify/json": "^2.2.147",
+    "@iconify/tailwind": "^0.1.4",
     "@types/micromodal": "^0.3.3",
     "astro": "^2.10.7",
     "astro-icon": "^0.8.1",
