@@ -25,7 +25,7 @@ const getHour = (date: Date | string) => {
 </script>
 
 <template>
-  <table class="hm-table">
+  <table class="hm-table animate-opacity-announcement">
     <thead>
       <tr class="hm-table__title">
         <th>{{ headers[0] }}</th>
@@ -57,7 +57,7 @@ const getHour = (date: Date | string) => {
             class="text-center text-primary hover:cursor-pointer active:scale-105 select-none py-2 text-xxs"
             @click="showDetails(index)"
           >
-            {{ !itemsToShow.has(index) ? '[ Más Detalle ]':'[ Menos Detalle ]' }}
+            {{ !itemsToShow.has(index) ? '[Más Detalle]':'[Menos Detalle]' }}
           </div>
           <div v-if="itemsToShow.has(index)" class="text-xs opacity-80">
             {{ speaker.detail }}

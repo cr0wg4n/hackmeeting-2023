@@ -6,6 +6,7 @@
       target="_blank"
       rel="noopener"
       class="bg-secondary rounded-full h-5 w-5 flex justify-center items-center hover:scale-110"
+      :title="url"
     >
       <span :class="icon" class="bg-neutral"/>
     </a>
