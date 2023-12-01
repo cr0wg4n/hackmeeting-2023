@@ -41,6 +41,7 @@ export interface HMContributor {
   imageSrc: string
   time: Time,
   keynote?: boolean,
+  special?: boolean, 
   socialNetworks?: SocialNetwork[]
 }
 

@@ -37,7 +37,7 @@ const getHour = (date: Date | string) => {
       <tr v-for="speaker, index in speakers" class="relative">
         <td class="text-xs relative">
           <SocialNetwork :socialNetworks="speaker.socialNetworks" class="absolute z-10 md:left-5 top-1/2 transform -translate-x-1/2 -translate-y-1/2"/>
-          <div class="flex flex-col">
+          <div class="flex flex-col pl-2 md:pl-0">
             <div class="flex justify-center p-2 relative">
               <img :src="speaker.imageSrc" class="hm-table__image rounded-full">
               <div v-if="speaker.keynote" class="absolute bottom-0">
@@ -52,8 +52,9 @@ const getHour = (date: Date | string) => {
           </div>
         </td>
         <td class="text-xs max-w-xs">
-          <div class="text-xs font-semibold text-center">{{ speaker.talkName }}</div>
+          <div class="text-xs font-semibold text-center" :class="{'text-secondary': speaker.special}">{{ speaker.talkName }}</div>
           <div 
+            v-if="speaker.detail"
             class="text-center text-primary hover:cursor-pointer active:scale-105 select-none py-2 text-xxs"
             @click="showDetails(index)"
           >

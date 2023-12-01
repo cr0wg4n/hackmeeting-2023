@@ -50,6 +50,17 @@ const workshoppers: Workshopper[] = [
     ]
   },
   {
+    talkName: '🥪 Solicita tu refrigerio gratuito 🍔',
+    name: '',
+    detail: '',
+    imageSrc: '',
+    special: true,
+    time: {
+      start: '12:00',
+      end: '13:00'
+    },
+  },
+  {
     talkName: 'Docker para principiantes',
     name: 'Esteban Lima',
     detail: 'Docker desde 0, para llevar al mundo de los contenedores tus aplicaciones.',
